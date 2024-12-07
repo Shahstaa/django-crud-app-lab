@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+  <link rel="stylesheet" href="{% static 'css/sculptures/sculpture-index.css' %}" />
+{% endblock %}
+
+{% block content %}
+  <section class="page-header">
+    <h1>Sculpture Gallery</h1>
+    <img src="{% static 'images/artistic-sculpture.png' %}" alt="A beautiful sculpture" class="header-img" />
+  </section>
+
+  <section class="sculpture-list">
+    {% for sculpture in sculptures %}
+      <div class="sculpture-card">
+        <a href="{% url 'sculpture-detail' sculpture.id %}">
+          <img src="{{ sculpture.image_url }}" alt="{{ sculpture.title }}" class="sculpture-thumbnail" />
+          <h2>{{ sculpture.title }}</h2>
+          <p>by {{ sculpture.artist }}</p>
+        </a>
+      </div>
+    {% endfor %}
+  </section>
+{% endblock %}

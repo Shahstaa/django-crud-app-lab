@@ -1,0 +1,199 @@
+html {
+    box-sizing: border-box;
+  }
+  *, /* All elements */
+  *::before, /* All ::before pseudo-elements */
+  *::after { /* All ::after pseudo-elements */
+    box-sizing: inherit;
+  }
+  :root {
+    font-size: 62.5%;
+    --nav-bg: rgba(34, 34, 34, 0.8);
+    --nav-bg-ff: rgba(34, 34, 34, 0.95);
+    --borders: rgba(200, 200, 200, 0.6) solid 1px;
+    --text-color: rgba(245, 245, 245, 1);
+    --link-hover-color: rgba(255, 193, 7, 1);
+    --button-bg: rgba(45, 45, 45, 1);
+    --button-bg-hover: rgba(60, 60, 60, 1);
+    --primary-accent: rgba(255, 193, 7, 0.8);
+    --card-box-shadow: 4px 4px 10px -2px rgba(0, 0, 0, 0.5);
+    --font-xl: 2.4rem;
+    --font-l: 1.8rem;
+    --font-reg: 1.6rem;
+    --font-small: 1.4rem;
+    --border-radius: 8px;
+  }
+  body {
+    margin: 0;
+    background: #121212;
+    color: var(--text-color);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  header {
+    width: 100%;
+    background: var(--nav-bg-ff);
+    border-bottom: var(--borders);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;  /* Ensures logo and nav are spaced out */
+    padding: 10px 20px;
+  }
+  
+  .header-logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-logo-container img {
+    max-width: 50px;
+    height: auto;
+    margin-right: 10px;
+  }
+  
+  .header-logo-text {
+    font-size: var(--font-l);
+    color: var(--text-color);
+    font-weight: bold;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: flex-end;
+    margin-left: auto;
+  }
+  
+  ul {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: var(--font-l);
+    padding: 5px 15px;
+    border-radius: var(--border-radius);
+    transition: color 0.2s, background-color 0.2s;
+  }
+  
+  nav a:hover {
+    background-color: var(--primary-accent);
+    color: #000;
+  }
+  
+  main {
+    width: 100%;
+    padding: 0 20px;
+    max-width: 1200px;
+  }
+  
+  h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 10px;
+  }
+  
+  h1 {
+    font-size: var(--font-xl);
+  }
+  
+  h2 {
+    font-size: var(--font-l);
+  }
+  
+  .btn {
+    display: inline-block;
+    font-size: var(--font-reg);
+    padding: 10px 20px;
+    text-align: center;
+    border: none;
+    border-radius: var(--border-radius);
+    background: var(--button-bg);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .btn:hover {
+    background: var(--button-bg-hover);
+    transform: scale(1.05);
+  }
+  
+  .card {
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-box-shadow);
+    color: var(--text-color);
+  }
+  
+  .card img {
+    max-width: 100%;
+    border-radius: var(--border-radius);
+  }
+  
+  footer {
+    margin-top: auto;
+    width: 100%;
+    padding: 10px 0;
+    background: var(--nav-bg);
+    text-align: center;
+    color: var(--text-color);
+  }
+  
+  footer a {
+    color: var(--primary-accent);
+    text-decoration: none;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+  
+  .page-header {
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .page-content {
+    font-size: var(--font-reg);
+    line-height: 1.8;
+  }
+  
+  /* Media Queries */
+  @media only screen and (min-width: 768px) {
+    nav ul {
+      justify-content: flex-end;
+    }
+  
+    main {
+      padding: 0 40px;
+    }
+  
+    .page-header h1 {
+      font-size: calc(var(--font-xl) + 1rem);
+    }
+  }
+  
+  @media only screen and (min-width: 1024px) {
+    main {
+      max-width: 1400px;
+    }
+  
+    header {
+      padding: 0 20px;
+      background: var(--nav-bg);
+    }
+  }
+  

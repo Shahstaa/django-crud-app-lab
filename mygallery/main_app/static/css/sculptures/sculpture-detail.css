@@ -1,0 +1,75 @@
+/* General Styling for Sculpture Detail Page */
+.sculpture-container {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  background-color: #f8f8f8;
+  gap: 20px;
+}
+
+.sculpture-img {
+  flex: 1;
+  max-width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sculpture-img img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sculpture-details {
+  flex: 1;
+  max-width: 50%;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sculpture-details h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.sculpture-details h2 {
+  font-size: 1.8rem;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.sculpture-details p {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Responsive Styling */
+@media only screen and (max-width: 768px) {
+  .sculpture-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sculpture-img,
+  .sculpture-details {
+    max-width: 90%;
+  }
+
+  .sculpture-details h1 {
+    font-size: 2rem;
+  }
+
+  .sculpture-details h2 {
+    font-size: 1.5rem;
+  }
+
+  .sculpture-details p {
+    font-size: 1.1rem;
+  }
+}

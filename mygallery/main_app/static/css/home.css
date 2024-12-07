@@ -1,0 +1,25 @@
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 100%;
+  }
+  
+  main > section {
+    width: 100%;
+    padding: 10px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .logo-container {
+    max-width: 375px;
+  }
+  
+  .cat-container {
+    width: 80%;
+  }
+  

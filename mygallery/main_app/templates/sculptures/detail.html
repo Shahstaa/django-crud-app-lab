@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+  <link rel="stylesheet" href="{% static 'css/sculptures/sculpture-detail.css' %}" />
+{% endblock %}
+
+{% block content %}
+  <section class="sculpture-container">
+    <div class="sculpture-img">
+      <img src="{{ sculpture.image_url }}" alt="{{ sculpture.title }}" />
+    </div>
+    <div class="sculpture-details">
+      <h1>{{ sculpture.title }}</h1>
+      <h2>by {{ sculpture.artist }}</h2>
+      <p>{{ sculpture.description }}</p>
+      {% comment %} <div class="sculpture-actions">
+        <a href="{% url 'sculpture-edit' sculpture.id %}" class="btn">Edit</a>
+        <a href="{% url 'sculpture-delete' sculpture.id %}" class="btn">Delete</a>
+      </div> {% endcomment %}
+    </div>
+  </section>
+{% endblock %}
