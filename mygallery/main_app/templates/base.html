@@ -7,7 +7,7 @@
     <title>Virtual Sculpture Gallery</title>
     <link rel="stylesheet" href="{% static 'css/base.css' %}" />
     <link rel="shortcut icon" href="{% static 'images/logo.png' %}" type="image/png" />
-    {% block head %} {% endblock %}
+    {% block head %} {% endblock head %}
   </head>
   <body>
     <header>
@@ -18,8 +18,21 @@
       </div>
       <nav>
         <ul>
+          {% if user.is_authenticated %}
             <li><a href="/sculptures">All Sculptures</a></li>
-            <li><a href="/about">About</a></li>            
+            <li><a href="{% url 'sculpture-create' %}">Add a Sculpture</a></li>
+            <li><a href="/about">About</a></li>
+            <li>
+              <form id="logout-form" method="post" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button type="submit">Log out</button>
+              </form>
+            </li>
+          {% else %}
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'home' %}">Login</a></li>
+            <li><a href="{% url 'signup' %}">Sign Up</a></li>
+          {% endif %}
         </ul>
       </nav>
     </header>

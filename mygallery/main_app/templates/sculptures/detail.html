@@ -12,12 +12,15 @@
     </div>
     <div class="sculpture-details">
       <h1>{{ sculpture.title }}</h1>
-      <h2>by {{ sculpture.artist }}</h2>
+      <h2>By {{ sculpture.artist }}</h2>
+      <p><strong>Year:</strong> {{ sculpture.year }}</p>
+      <p><strong>Material:</strong> {{ sculpture.material }}</p>
       <p>{{ sculpture.description }}</p>
-      {% comment %} <div class="sculpture-actions">
-        <a href="{% url 'sculpture-edit' sculpture.id %}" class="btn">Edit</a>
-        <a href="{% url 'sculpture-delete' sculpture.id %}" class="btn">Delete</a>
-      </div> {% endcomment %}
+  
+      <div class="sculpture-actions">
+        <a href="{% url 'sculpture-update' sculpture.pk %}" class="btn warn">Edit</a>
+        <a href="{% url 'sculpture-delete' sculpture.pk %}" class="btn danger">Delete</a>
+      </div>
     </div>
   </section>
 {% endblock %}
